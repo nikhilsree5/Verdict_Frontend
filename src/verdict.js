@@ -37,7 +37,7 @@ function Verdict({ type }) {
 
     try {
       if (type === 'sms') {
-        response = await fetch('https://verdict-backend.onrender.com/api/analyze_sms', {
+        response = await fetch('https://verdict-backend.vercel.app/api/analyze_sms', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ text })
@@ -45,7 +45,7 @@ function Verdict({ type }) {
       } else {
         const formData = new FormData();
         formData.append('file', file);
-        response = await fetch('https://verdict-backend.onrender.com/api/analyze_document', {
+        response = await fetch('https://verdict-backend.vercel.app/api/analyze_document', {
           method: 'POST',
           body: formData
         });
